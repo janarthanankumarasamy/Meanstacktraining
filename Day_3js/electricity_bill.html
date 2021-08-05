@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check() 
+{
+    var initialRate_1 = 1
+   var initialRate = 2; // electricity charged at this rate below 200
+    var standardRate = 3; // amount of electricity between 200 and 400 charged at this rate
+    var overageRate = 5; // the part of electricity usage over 400 at this rate
+    var electricityUsage = +document.getElementById('bill').value; // convert String to Number
+
+    if (isFinite(electricityUsage) || electricityUsage < 0) {
+        alert('The number entered was invalid, or was less than 0.');
+        return;
+    }
+
+    // calculates the total
+    alert(
+        electricityUsage <= 300
+        ? initialRate_1 * 100 + initialRate *100 + standardRate *100 (electricityUsage - 300)
+        : electricityUsage > 300
+            ? initialRate_1 * 100 + initialRate *100 + standardRate*100 + (electricityUsage - 300)*overageRate
+            
+    );
+}
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <h1> EB CALCULATOR</h1>
+    <input id="unit" type="text" />
+    <button onclick="ebCalculation(unit)"> calculate</button>
+    <h1 id="Result"></h1>
+    <script>
+        
+ 
+        function ebCalculation(unit) {
+ 
+            var amount = null;
+ 
+            unit = parseInt(document.getElementById("unit").value);
+            
+            if (unit <= 100) {
+ 
+                var rate = 1;
+                amount = unit * rate;
+ 
+            }
+            else if (unit > 101 || unit <= 200) {
+                
+                var rate = 1;
+                var newrate = 2;
+                var oldslab = 100;
+                var newslab = unit - oldslab;
+ 
+                amount = (oldslab * rate) + (newslab * newrate);
+ 
+            }
+            else if (unit > 201 || unit <= 300) {
+                
+                var rate = 1;
+                var oldslab = 100;
+                var newslab = unit - oldslab;
+ 
+                amount = (oldslab * rate) + (newslab * 3);
+ 
+            }
+            else if (unit > 301) {
+ 
+                var rate = 1;
+ 
+                var oldslab = 100;
+                var newslab = unit - oldslab;
+ 
+                amount = (oldslab * rate) + (newslab * 5);
+ 
+            }
+ 
+            console.log(amount)
+            document.getElementById("Result").innerHTML = amount;
+        }
+ 
+    </script>
+</body>
+ 
+</html>

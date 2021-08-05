@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+ 
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+ 
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+ 
+/* EVERY DAY GREAT DEALS ON:reliancedigital.in */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+             display: block;
+    margin-bottom: 20px;
+    background-color: antiquewhite;
+  }   
+}
+ 
+/* Style the counter cards */
+.tv {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  font-family: sans-serif;
+}
+.price{
+    color:grey;
+     font-size:22px ;
+ 
+}
+.button{
+    border-color: blue;
+    padding: 0%;
+    background-color: #000;
+    text-align: center;
+     font-size:18px;
+}
+.card button:hover{
+    opacity: 0.7;
+}
+</style>
+</head>
+<body>
+ 
+<h2>EVERY DAY GREAT DEALS ON:reliancedigital.in</h2>
+<p>Exclusive on reliance digital</p>
+ 
+<div class="row">
+  <div class="column">
+    <div class="TV">
+      <h3>androidtv</h3>
+      <p class="price">$19.99</p>
+      <p>Sony brand</p>
+      <p><button>Add to cart</button></p>
+    </div>
+  </div>
+ 
+  <div class="column">
+    <div class="TV">
+      <h3>oneplus</h3>
+      <p class="price">$49.99</p>
+      <p>2 year warranty</p>
+      <p>button>Add to cart</button></p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="TV">
+      <h3>redme</h3>
+      
+      <p class="price">$50.00</p>
+      <p>50 inch</p>
+      <p>3 years warranty</p>
+      <p>button>Add to cart</button></p>
+    </div>
+  </div>
+  
+  
+  </div>
+</div>
+ 
+</body>
+</html>

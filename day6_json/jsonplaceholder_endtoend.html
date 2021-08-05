@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Get_todo's</title>
+  </head>
+  <body onload="gettodos()">
+    <h1>To do's</h1>
+    <table id="result"></table>
+    <script>
+      todos = [];
+      function gettodos() {
+        fetch("https://jsonplaceholder.typicode.com/todos")
+          .then(Response => Response.json())
+          .then(json => displaydata(json));
+      }
+      function displaydata(jsondata) {
+        todos = jsondata;
+        var data =
+          "<tr><td>userid</td><td>id</td><td>title</td><td>completed</td></tr>";
+        for (i = 0; i < todos.length; i++) {
+          data =
+            data +
+            `<tr><td>${todos[i].userId}</td><td>${todos[i].id}</td><td>${todos[i].title}</td><td>${todos[i].completed}</td></tr>`;
+        }
+        document.getElementById("result").innerHTML = data;
+      }
+    </script>
+  </body>
+</html>

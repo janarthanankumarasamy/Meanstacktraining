@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>corona</title>
+  </head>
+  <body ng-app="coronaApp" ng-controller="coronaContoller">
+    <h1>Corona dashboard</h1>
+    <input
+      type="text"
+      name="state"
+      id="state"
+      ng-model="state"
+      placeholder="Enter your state"
+    /><br />
+    <input
+      type="text"
+      name="total"
+      id="total"
+      ng-model="total"
+      placeholder="Enter total cases"
+    /><br />
+    <input
+      type="text"
+      name="recovered"
+      id="recovered"
+      ng-model="recovered"
+      placeholder="Enter recovered cases"
+    /><br />
+    <input
+      type="text"
+      name="active"
+      id="active"
+      ng-model="active"
+      placeholder="Enter active cases"
+    /><br />
+    <input
+      type="text"
+      name="dead"
+      id="dead"
+      ng-model="dead"
+      placeholder="Enter dead cases"
+    /><br />
+    <button ng-click="result()">submit</button><br /><br />
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Total cases</th>
+          <th scope="col">Recovered cases</th>
+          <th scope="col">Active cases</th>
+          <th scope="col">Dead cases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{state}}</th>
+          <td>{{total}}</td>
+          <td>{{recovered}}</td>
+          <td>{{active}}</td>
+          <td>{{dead}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var app = angular.module("coronaApp", []);
+      app.controller("coronaContoller", function($scope) {
+        $scope.state;
+        $scope.total = 0;
+        $scope.recovered = 0;
+        $scope.active = 0;
+        $scope.dead = 0;
+
+        $scope.result = function() {
+          state = $scope.state;
+          total = $scope.total;
+          recovered = $scope.recovered;
+          active = $scope.active;
+          dead = $scope.dead;
+        };
+      });
+    </script>
+  </body>
+</html>
